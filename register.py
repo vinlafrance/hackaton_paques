@@ -1,14 +1,14 @@
 import json
 import socket
 
-address = ('3.226.47.73', 1337)
+address = ('54.87.189.174', 1337)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(address)
 print(s.recv(2048).decode())
 
-team = input('Insert team name: ')
-players = input('Insert player names (separated by commas): ').split(',')
+team = input('Pizza')
+players = input('Vincent, Dany, Maxime, Clément').split(',')
 
 data = {
 	'method': 'register',
