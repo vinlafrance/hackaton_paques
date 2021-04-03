@@ -88,6 +88,23 @@ def parse_input_file(filename: str) -> cmd_responses:
                          products_weight, warehouse_count, warehouse_info, cmd_count, commands_info)
 
 
+def format_line_to_output(string: str) -> str:
+    return "{0}\n".format(string)
+
+
+def write_output_file(filename: str, drones: list):
+    output = open(filename, "w")
+    orders_to_exe = format_line_to_output("0")
+    lines = [format_line_to_output(orders_to_exe)]
+
+    for i, drone in enumerate(drones):
+        cmd = "{0} {1}".format(i, drone.commandes)
+        lines.append(format_line_to_output(cmd))
+
+    output.writelines(lines)
+
+
 if __name__ == "__main__":
-    parse_input_file('maps/busy_day.in')
+    # rep = parse_input_file('maps/busy_day.in')
+    write_output_file('output_text.txt')
     print("Code here people :)")
