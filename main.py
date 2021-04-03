@@ -1,8 +1,5 @@
 import collections
 
-from setuptools.dist import single_line
-
-
 class cmd_responses:
 
     def __init__(self, line_count, col_count, drone_count, simulation_duration, max_drone_load, product_count,
